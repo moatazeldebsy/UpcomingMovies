@@ -13,7 +13,8 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E221169121914E4D0039F8C9"
@@ -21,6 +22,194 @@
                BlueprintName = "UpcomingMoviesTests"
                ReferencedContainer = "container:UpcomingMovies.xcodeproj">
             </BuildableReference>
+            <SelectedTests>
+               <Test
+                  Identifier = "AccountTests/testAuthorizationProcessError()">
+               </Test>
+               <Test
+                  Identifier = "AccountTests/testAuthorizationProcessSuccess()">
+               </Test>
+               <Test
+                  Identifier = "AccountTests/testCurrentUserNil()">
+               </Test>
+               <Test
+                  Identifier = "AccountTests/testCurrentUserNotNil()">
+               </Test>
+               <Test
+                  Identifier = "AccountTests/testIsUserSignedInFalse()">
+               </Test>
+               <Test
+                  Identifier = "AccountTests/testIsUserSignedInTrue()">
+               </Test>
+               <Test
+                  Identifier = "AccountTests/testSignInUserError()">
+               </Test>
+               <Test
+                  Identifier = "AccountTests/testSignInUserSuccess()">
+               </Test>
+               <Test
+                  Identifier = "CustomListsTests/testGetCustomListsEmpty()">
+               </Test>
+               <Test
+                  Identifier = "CustomListsTests/testGetCustomListsError()">
+               </Test>
+               <Test
+                  Identifier = "CustomListsTests/testGetCustomListsPaging()">
+               </Test>
+               <Test
+                  Identifier = "CustomListsTests/testGetCustomListsPopulated()">
+               </Test>
+               <Test
+                  Identifier = "MovieCreditsTests/testGetMovieCreditsEmpty()">
+               </Test>
+               <Test
+                  Identifier = "MovieCreditsTests/testGetMovieCreditsError()">
+               </Test>
+               <Test
+                  Identifier = "MovieCreditsTests/testGetMovieCreditsPopulated()">
+               </Test>
+               <Test
+                  Identifier = "MovieCreditsTests/testMovieCreditsTitle()">
+               </Test>
+               <Test
+                  Identifier = "MovieCreditsTests/testNumberOfItemsCastSection()">
+               </Test>
+               <Test
+                  Identifier = "MovieCreditsTests/testNumberOfItemsCrewSection()">
+               </Test>
+               <Test
+                  Identifier = "MovieCreditsTests/testNumberOfSections()">
+               </Test>
+               <Test
+                  Identifier = "MovieCreditsTests/testToggleClosedSection()">
+               </Test>
+               <Test
+                  Identifier = "MovieCreditsTests/testToggleOpenedSection()">
+               </Test>
+               <Test
+                  Identifier = "MovieDetailTests/testMovieDetailBackdropPath()">
+               </Test>
+               <Test
+                  Identifier = "MovieDetailTests/testMovieDetailOverview()">
+               </Test>
+               <Test
+                  Identifier = "MovieDetailTests/testMovieDetailPosterPath()">
+               </Test>
+               <Test
+                  Identifier = "MovieDetailTests/testMovieDetailReleaseDate()">
+               </Test>
+               <Test
+                  Identifier = "MovieDetailTests/testMovieDetailTitle()">
+               </Test>
+               <Test
+                  Identifier = "MovieDetailTests/testMovieDetailVoteAverage()">
+               </Test>
+               <Test
+                  Identifier = "MovieReviewsTests/testGetReviewsEmpty()">
+               </Test>
+               <Test
+                  Identifier = "MovieReviewsTests/testGetReviewsError()">
+               </Test>
+               <Test
+                  Identifier = "MovieReviewsTests/testGetReviewsPaging()">
+               </Test>
+               <Test
+                  Identifier = "MovieReviewsTests/testGetReviewsPopulated()">
+               </Test>
+               <Test
+                  Identifier = "MovieReviewsTests/testMovieReviewCellAuthorName()">
+               </Test>
+               <Test
+                  Identifier = "MovieReviewsTests/testMovieReviewCellContent()">
+               </Test>
+               <Test
+                  Identifier = "MovieReviewsTests/testMovieReviewsTitle()">
+               </Test>
+               <Test
+                  Identifier = "MovieVideosTests/testGetVideosEmpty()">
+               </Test>
+               <Test
+                  Identifier = "MovieVideosTests/testGetVideosError()">
+               </Test>
+               <Test
+                  Identifier = "MovieVideosTests/testGetVideosPopulated()">
+               </Test>
+               <Test
+                  Identifier = "MovieVideosTests/testMovieVideoCellKey()">
+               </Test>
+               <Test
+                  Identifier = "MovieVideosTests/testMovieVideoCellName()">
+               </Test>
+               <Test
+                  Identifier = "MovieVideosTests/testMovieVideoCellThumbnailURL()">
+               </Test>
+               <Test
+                  Identifier = "MovieVideosTests/testMovieVideosTitle()">
+               </Test>
+               <Test
+                  Identifier = "ProfileTests/testCollectionOptionIndex()">
+               </Test>
+               <Test
+                  Identifier = "ProfileTests/testCustomListsOptionIndex()">
+               </Test>
+               <Test
+                  Identifier = "ProfileTests/testGetAccountDetailError()">
+               </Test>
+               <Test
+                  Identifier = "ProfileTests/testGetAccountDetailSuccessInfoNotReloaded()">
+               </Test>
+               <Test
+                  Identifier = "ProfileTests/testGetAccountDetailSuccessInfoReloaded()">
+               </Test>
+               <Test
+                  Identifier = "ProfileTests/testNumberOfSections()">
+               </Test>
+               <Test
+                  Identifier = "ProfileTests/testSectionIndex()">
+               </Test>
+               <Test
+                  Identifier = "SavedMoviesTests/testGetCollectionListEmpty()">
+               </Test>
+               <Test
+                  Identifier = "SavedMoviesTests/testGetCollectionListError()">
+               </Test>
+               <Test
+                  Identifier = "SavedMoviesTests/testGetCollectionListPaging()">
+               </Test>
+               <Test
+                  Identifier = "SavedMoviesTests/testGetCollectionListPopulated()">
+               </Test>
+               <Test
+                  Identifier = "SavedMoviesTests/testMovieCellsCount()">
+               </Test>
+               <Test
+                  Identifier = "SavedMoviesTests/testMovieCellsZeroCount()">
+               </Test>
+               <Test
+                  Identifier = "SavedMoviesTests/testMovieIndex()">
+               </Test>
+               <Test
+                  Identifier = "SavedMoviesTests/testSavedMoviesTitle()">
+               </Test>
+               <Test
+                  Identifier = "UpcomingMoviesTests/testGetMoviesEmpty()">
+               </Test>
+               <Test
+                  Identifier = "UpcomingMoviesTests/testGetMoviesError()">
+               </Test>
+               <Test
+                  Identifier = "UpcomingMoviesTests/testGetMoviesPaging()">
+               </Test>
+               <Test
+                  Identifier = "UpcomingMoviesTests/testGetMoviesPopulated()">
+               </Test>
+               <Test
+                  Identifier = "UpcomingMoviesTests/testUpcomingMovieCellBackdropURL()">
+               </Test>
+               <Test
+                  Identifier = "UpcomingMoviesTests/testUpcomingMovieCellPosterURL()">
+               </Test>
+            </SelectedTests>
          </TestableReference>
       </Testables>
    </TestAction>

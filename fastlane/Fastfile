@@ -4,12 +4,58 @@ ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"] = "4"
 
 platform :ios do
 
-  	lane :tests do
-  	run_tests(
+	lane :tests do
+	scan(
   	  workspace: "UpcomingMovies.xcworkspace",
-     	  devices: ["iPhone 8"],
-      	  scheme: "UpcomingMovies"
+     	  devices: "iPhone 13 Pro Max",
+      	  scheme: "UpcomingMovies",
+      	  clean: false,
     	)
+	end
+
+	UI.important(
+	  'example: ' \
+	  'split the tests into 4 batches and run each batch of tests in ' \
+	  'parallel up to 3 times if tests fail. Abort the testing early ' \
+	  'if there are too many failing tests by passing in a ' \
+	  ':testrun_completed_block that is called by :multi_scan ' \
+	  'after each run of tests.'
+	)
+	test_run_block = lambda do |testrun_info|
+	  failed_test_count = testrun_info[:failed].size
+	  passed_test_count = testrun_info[:passing].size
+	  try_attempt = testrun_info[:try_count]
+	  batch = testrun_info[:batch]
+
+	  UI.message("\n everything is fine, let's continue try #{try_attempt + 1} for batch #{batch}")
+	  {
+	    continue: true,
+	    only_testing: ['UpcomingMovies']
+	  }
+	end
+
+	sim_callback = lambda do |simulator_device_udid|
+	  puts "Start streaming system log for device #{simulator_device_udid}"
+	end
+
+	override_scan_options_callback = lambda do |options|
+	  options.delete(:xctestrun) unless FastlaneCore::Helper.xcode_at_least?(10)
+	end
+
+	lane :ui_tests do
+	multi_scan(
+  		workspace: 'UpcomingMovies.xcworkspace',
+  		scheme: 'UpcomingMovies',
+  		try_count: 2,
+  		batch_count: 3,
+	  	parallel_testrun_count: 3,
+	  	fail_build: false,
+	  	collate_reports: true,
+	  	testrun_completed_block: test_run_block,
+	  	simulator_started_callback: sim_callback,
+	  	override_scan_options_block: override_scan_options_callback,
+	  	devices: "iPhone 8"
+	)
 	end
 
 	lane :lint do
@@ -21,5 +67,4 @@ platform :ios do
 	  raise_if_swiftlint_error: true
 	)
 	end
-
 end
